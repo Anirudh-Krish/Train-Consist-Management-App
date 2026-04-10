@@ -1,40 +1,46 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 class trainconsistManagementapp {
 
     public static void main(String[] args) {
 
         System.out.println("=======================================");
-        System.out.println("UC3 - Manage Passenger Bogies");
+        System.out.println("UC4 - Maintain Ordered Bogie Consist");
         System.out.println("=======================================\n");
 
-        // Create ArrayList
-        List<String> passengerBogies = new ArrayList<>();
+        // Create LinkedList
+        LinkedList<String> bogies = new LinkedList<>();
 
-        // ---- ADD bogies (including duplicates) ----
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("Sleeper");   // duplicate
-        passengerBogies.add("First Class");
+        // ---- ADD bogies in sequence ----
+        bogies.add("Sleeper");
+        bogies.add("AC Chair");
+        bogies.add("First Class");
 
-        System.out.println("After Adding Bogies (with duplicates):");
-        System.out.println("Passenger Bogies : " + passengerBogies);
+        System.out.println("After Adding Bogies:");
+        System.out.println("Bogies : " + bogies);
 
-        // ---- REMOVE one occurrence ----
-        passengerBogies.remove("Sleeper"); // removes first occurrence only
+        // ---- INSERT at specific position ----
+        bogies.add(1, "General"); // insert at index 1
 
-        System.out.println("\nAfter Removing one 'Sleeper':");
-        System.out.println("Passenger Bogies : " + passengerBogies);
+        System.out.println("\nAfter Inserting 'General' at position 1:");
+        System.out.println("Bogies : " + bogies);
 
-        // ---- CHECK existence ----
-        System.out.println("\nChecking if 'AC Chair' exists:");
-        System.out.println("Contains AC Chair? : " + passengerBogies.contains("AC Chair"));
+        // ---- REMOVE from front ----
+        bogies.removeFirst();
+
+        System.out.println("\nAfter Removing First Bogie:");
+        System.out.println("Bogies : " + bogies);
+
+        // ---- REMOVE from rear ----
+        bogies.removeLast();
+
+        System.out.println("\nAfter Removing Last Bogie:");
+        System.out.println("Bogies : " + bogies);
 
         // ---- FINAL OUTPUT ----
-        System.out.println("\nFinal Train Passenger Consist:");
-        System.out.println(passengerBogies);
+        System.out.println("\nFinal Train Bogie Consist:");
+        System.out.println(bogies);
 
-        System.out.println("\nUC3 operations completed successfully...");
+        System.out.println("\nUC4 operations completed successfully...");
     }
 }
