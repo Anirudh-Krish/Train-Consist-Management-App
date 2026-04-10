@@ -6,36 +6,35 @@ class trainconsistManagementapp {
     public static void main(String[] args) {
 
         System.out.println("=======================================");
-        System.out.println("UC2 - Add Passenger Bogies to Train ");
+        System.out.println("UC3 - Manage Passenger Bogies");
         System.out.println("=======================================\n");
 
-        // Create an ArrayList to hold passenger bogies
+        // Create ArrayList
         List<String> passengerBogies = new ArrayList<>();
 
-        // ---- CREATE (Add bogies) ----
+        // ---- ADD bogies (including duplicates) ----
         passengerBogies.add("Sleeper");
         passengerBogies.add("AC Chair");
+        passengerBogies.add("Sleeper");   // duplicate
         passengerBogies.add("First Class");
 
-        System.out.println("After Adding Bogies:");
+        System.out.println("After Adding Bogies (with duplicates):");
         System.out.println("Passenger Bogies : " + passengerBogies);
 
-        // ---- DELETE (Remove a bogie) ----
-        passengerBogies.remove("AC Chair");
+        // ---- REMOVE one occurrence ----
+        passengerBogies.remove("Sleeper"); // removes first occurrence only
 
-        System.out.println("\nAfter Removing 'AC Chair':");
+        System.out.println("\nAfter Removing one 'Sleeper':");
         System.out.println("Passenger Bogies : " + passengerBogies);
 
-        // ---- READ (Check if a bogie exists) ----
-        boolean hasSleeper = passengerBogies.contains("Sleeper");
+        // ---- CHECK existence ----
+        System.out.println("\nChecking if 'AC Chair' exists:");
+        System.out.println("Contains AC Chair? : " + passengerBogies.contains("AC Chair"));
 
-        System.out.println("\nChecking if 'Sleeper' exists:");
-        System.out.println("Contains Sleeper? : " + hasSleeper);
-
-        // ---- FINAL DISPLAY ----
+        // ---- FINAL OUTPUT ----
         System.out.println("\nFinal Train Passenger Consist:");
         System.out.println(passengerBogies);
 
-        System.out.println("\nUC2 operations completed successfully...");
+        System.out.println("\nUC3 operations completed successfully...");
     }
 }
